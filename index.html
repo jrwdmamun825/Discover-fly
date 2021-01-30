@@ -122,7 +122,6 @@
         <!--Thank You-->
         <script>
             function handleTicketPrice(product, isIncrease) {
-
                 const ticketInputs = document.getElementById(product + '-count');
                 var ticketCount = parseInt(ticketInputs.value);
                 let firstNewCount = 0;
@@ -133,19 +132,18 @@
                     ticketNewCount = ticketCount - 1;
                 }
                 ticketInputs.value = ticketNewCount;
-
                 let ticketPrice = 0;
                 if (product == 'ticket') {
                     ticketPrice = ticketNewCount * 150;
-
                 }
                 if (product == 'economy') {
                     ticketPrice = ticketNewCount * 100;
                 }
                 document.getElementById(product + '-price').innerText = ticketPrice;
                 ticketTotal();
-
             }
+
+
             function ticketTotal() {
 
                 const ticketCount = getTicketValue('ticket');
@@ -158,27 +156,20 @@
                 const toalTicketPrice = totalSub + taxValue;
                 document.getElementById('total').innerText = toalTicketPrice;
 
-
-
             }
+
+
             function getTicketValue(product) {
                 const ticketCount = document.getElementById(product + '-count');
                 const ticket = parseInt(ticketCount.value);
                 return ticket;
             }
+
+
             document.getElementById('bookNow').addEventListener('click', function(){
                 alert('order success' + ' ' + '$' +  document.getElementById('total').innerText  );
 
             })
-
-
-
-
-
-
-
-
-
 
         </script>
 </body>
